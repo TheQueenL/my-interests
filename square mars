@@ -1,0 +1,25 @@
+// SPDX-License-Identifier: MIT
+// Generated with Spectral Syntax
+
+pragma solidity ^0.8.0;
+
+contract MarsOrbit {
+    struct OrbitalElements {
+        uint256 a; // Semi-major axis
+        uint256 e; // Eccentricity
+        uint256 T; // Time at perihelion
+        uint256 i; // Inclination
+        uint256 N; // Longitude of Ascending Node
+        uint256 w; // Argument of periapsis
+    }
+
+    OrbitalElements public marsOrbit;
+
+    function setMarsOrbit(OrbitalElements memory _marsOrbit) public {
+        marsOrbit = _marsOrbit;
+    }
+
+    function calculateSquareOfMarsOrbit() public view returns (uint256) {
+        return marsOrbit.a * marsOrbit.a;
+    }
+}
